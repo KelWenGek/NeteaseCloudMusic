@@ -1,0 +1,78 @@
+@import '~@/styles/Variable.scss';
+@import '~@/styles/Base.scss';
+@import '~@/styles/Common.scss';
+@import '~@/styles/Nav.scss';
+@import '~@/styles/TabCt.scss';
+
+html,body{
+    height: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+.u-height{
+    height: 100%;
+}
+
+.u-img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.u-earp {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd…4xNDUuNTY5LS4zNi43NTMuMjI0LjMzNC4zNi43Mi4zNiAxLjEzOHYyLjU1MiIvPjwvc3ZnPg==);
+}
+
+.u-hmsprt {
+    background-image: url(//s3.music.126.net/m/s/img/index_icon_2x.png?5207a28…) no-repeat;
+    background-size: 166px 97px;
+}
+
+.u-svg {
+    display: inline-block;
+    vertical-align: middle;
+    background-position: 0 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.u-svg-empty {
+    width: 14px;
+    height: 14px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd…ggZD0ibTE5IDlsLTEwIDEwIi8+PHBhdGggZD0ibTkgOWwxMCAxMCIvPjwvZz48L2c+PC9zdmc+);
+}
+
+.u-svg-histy {
+    width: 15px;
+    height: 15px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd…FzMSAuNDQ3IDEgMXY5aDdjLjU1MyAwIDEgLjQ0NyAxIDFzLS40NDcgMS0xIDEiLz48L3N2Zz4=);
+}
+
+.u-svg-close {
+    width: 12px;
+    height: 12px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd…k3LS4zODEgMS4zNzggMHMuMzgxLjk5OCAwIDEuMzc4bC0xMC4zMzggMTAuMzM4Ii8+PC9zdmc+);
+}
+
+.u-svg-srch {
+    width: 13px;
+    height: 13px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd…MuNTgyLDgsOCw4YzQuNDE4LDAsOC0zLjU4Miw4LThTMTQuNDE4LDIsMTAsMnoiLz48L3N2Zz4=);
+}
+.u-svg-search {
+    width: 15px;
+    height: 15px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd…kuNS00LjI1NCw5LjUtOS41QzIxLDcuMjUzLDE2Ljc0NiwzLDExLjUsM3oiLz48L2c+PC9zdmc+);
+}
+
+.m-home{
+    background: #fcfcfd;
+    min-height: 100%;
+
+    .m-tabarea-index{
+        padding-top: $tabH;
+    }
+}
+
+.m-tabarea{
+    margin: 0 auto;
+}
+
