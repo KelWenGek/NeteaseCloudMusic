@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: {
-        vendor: ['react', 'react-dom', 'redux', 'react-redux', 'classnames','axios']
+        vendor: ['react', 'react-dom', 'react-router-dom', 'react-router-redux', 'redux', 'react-redux', 'redux-thunk', 'classnames', 'axios']
     },
     output: {
         path: path.join(__dirname, '../static/js'),

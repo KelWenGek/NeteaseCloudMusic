@@ -46,7 +46,7 @@ export default class Reco extends Component {
                             {remd.length ? remd.slice(0, 6).map(item => {
                                 let { id, name, picUrl, playCount } = item;
                                 return (
-                                    <a key={id} className="remd_li" href={`/m/playlist?id=${id}`}>
+                                    <a key={id} className="remd_li" href={`/m/playlist/${id}`}>
                                         <div className="remd_img">
                                             <img className="u-img" src={picUrl} />
                                             <span className="u-earp remd_lnum">{`${(playCount / 10e4).toFixed(1)}万`}</span>

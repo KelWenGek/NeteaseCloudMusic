@@ -1,7 +1,15 @@
 import * as actionTypes from '@/constants/actionTypes';
-export default function rootReducer(state = { current: 0 }, action) {
+import search from './search'
+
+
+function current(state = 0, action) {
     switch (action.type) {
-        case actionTypes.CHANGE_TAB: return { current: action.payload }
+        case actionTypes.CHANGE_TAB: return action.payload
         default: return state;
     }
+}
+
+export default {
+    search,
+    current
 }

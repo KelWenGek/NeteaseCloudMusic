@@ -13,7 +13,9 @@ body, button, input, keygen, legend, select, textarea {
     color: #333;
     outline: 0;
 }
-
+address, cite, dfn, em, i, var {
+    font-style: normal;
+}
 b, em, h1, h2, h3, h4, h5, h6, strong {
     font-weight: 400;
 }

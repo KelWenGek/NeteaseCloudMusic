@@ -40,7 +40,7 @@ export default class Hot extends Component {
                                     album: item.al
                                 }
                             });
-                            return <Song key={item.id} song={item} index={index} />
+                            return <Song key={id} song={item} index={index} />
                         }) : <Empty />}
                     </div>
                 </div>

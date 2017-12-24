@@ -45,6 +45,24 @@ $tabH:40px;
     word-break: normal;
 }
 
+.f-thide2,
+.f-thide3, 
+.f-thide4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.f-thide3 {
+    -webkit-line-clamp: 3;
+}
+.f-brk {
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+}
+
 @media screen and (-webkit-min-device-pixel-ratio: 2)
 {
     .f-bd:after {
