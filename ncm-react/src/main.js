@@ -13,9 +13,9 @@ import {
     Route,
     Link
 } from 'react-router-dom'
-import App from './App';
-import PlayList from './components/PlayList'
-import SongDetail from './components/SongDetail'
+import Home from '@/components/home/Index';
+import PlayList from '@/components/playlist/Index'
+import Song from '@/components/song/Index'
 import rootReducer from '@/store/reducers';
 
 axios.defaults.baseURL = 'http://127.0.0.1:3000/';
@@ -39,9 +39,9 @@ const ncm =
     <Provider store={store}>
         <BrowserRouter>
             <div>
-                <Route path="/" exact component={App} />
+                <Route path="/" exact component={Home} />
                 <Route path="/m/playlist/:id" component={PlayList} />
-                <Route path="/m/song/:id" component={SongDetail} />
+                <Route path="/m/song/:id" component={() => <Song store={store} />} />
             </div>
         </BrowserRouter>
     </Provider>

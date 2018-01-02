@@ -1,21 +1,35 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { getSearchResult } from '@/store/actions'
-export default withRouter(connect(state => ({ search: state.search }), { getSearchResult })(class SearchDefault extends Component {
+import { getSearchResult, getSearchHot } from '@/store/actions'
+export default withRouter(connect(state => ({ search: state.search }), { getSearchResult, getSearchHot })(class SearchDefault extends Component {
+
+
+    componentDidMount() {
+        this.props.getSearchHot();
+    }
+
+
     render() {
-        console.log('in search', this.props)
         let { getSearchResult, search } = this.props;
-        let { keyword, history } = search;
+        let { keyword, history, hot, show } = search;
         return (
-            !keyword &&
-            <div className="m-default">
+            !keyword && !show &&
+            < div className="m-default" >
                 <section className="m-hotlist">
                     <h3 className="title">热门搜索</h3>
                     <ul className="list">
-                        <li className="item f-bd f-bd-full" onClick={() => getSearchResult()}>
-                            <a className="link" href="javascript:void(0);">RADWIMPS</a>
-                        </li>
+                        {
+                            hot.length && hot.map((h, index) => {
+                                return (
+                                    <li key={index} className="item f-bd f-bd-full" onClick={() => getSearchResult(h.first)}>
+                                        <a className="link" href="javascript:void(0);">{h.first}</a>
+                                    </li>
+                                )
+                            })
+                        }
+
                     </ul>
                 </section>
                 {
@@ -36,7 +50,7 @@ export default withRouter(connect(state => ({ search: state.search }), { getSear
                         </ul>
                     </section>
                 }
-            </div>
+            </div >
         )
     }
 }))

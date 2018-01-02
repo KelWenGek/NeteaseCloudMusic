@@ -11,9 +11,9 @@ export default connect(state => ({ search: state.search }), { getSearchResult })
     }
 
     render() {
-        let { keyword, suggests, result } = this.props.search;
+        let { keyword, suggests, result, show } = this.props.search;
         return (
-            keyword && !result.length &&
+            (!show || keyword) &&
             < section className="m-recom" >
                 <h3 className="title f-bd f-bd-btm f-thide" onClick={() => this.getSearchResult(keyword)}>
                     {`搜索"${keyword}"`}

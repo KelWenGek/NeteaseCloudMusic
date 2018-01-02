@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import cn from 'classnames'
-import wrapSong from '@/components/Song'
+import wrapSong from '@/hoc/Song'
 export default class PlayList extends Component {
 
     state = {

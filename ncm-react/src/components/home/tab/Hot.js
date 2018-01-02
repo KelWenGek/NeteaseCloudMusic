@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Empty from '@/components/Empty'
-import wrapSong from '@/components/Song'
+import wrapSong from '@/hoc/Song'
 import axios from 'axios'
 export default class Hot extends Component {
 

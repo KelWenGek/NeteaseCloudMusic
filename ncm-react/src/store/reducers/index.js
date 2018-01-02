@@ -1,5 +1,8 @@
 import * as actionTypes from '@/constants/actionTypes';
 import search from './search'
+import Song from './song'
+import SongLyric from './songLyric'
+import SongPlay from './songPlay'
 
 
 function current(state = 0, action) {
@@ -11,5 +14,8 @@ function current(state = 0, action) {
 
 export default {
     search,
-    current
+    current,
+    Song,
+    SongLyric,
+    SongPlay
 }

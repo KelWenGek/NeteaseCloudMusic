@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Empty from '@/components/Empty'
 import axios from 'axios'
-import wrapSong from '@/components/Song'
+import wrapSong from '@/hoc/Song'
 export default class Reco extends Component {
 
     state = {

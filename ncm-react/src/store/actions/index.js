@@ -20,6 +20,23 @@ export const doSearchClear = () => ({
     type: actionTypes.DO_SEARCH_CLEAR
 })
 
+//设置热门搜索
+
+export const getSearchHot = () => async dispatch => {
+    try {
+        let { data } = await axios.get(`search/hot`);
+        if (data.code === 200) {
+            dispatch(setSearchHot(data.result.hots));
+        }
+    } catch (e) {
+
+    }
+}
+
+export const setSearchHot = (payload) => ({
+    type: actionTypes.SET_SEARCH_HOT,
+    payload
+})
 
 //获取搜索建议
 export const getSearchSuggest = keyword => async (dispath) => {

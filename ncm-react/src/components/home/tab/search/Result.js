@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import wrapSong from '@/components/Song'
+import wrapSong from '@/hoc/Song'
 export default connect(state => ({ search: state.search }))(class SearchResult extends Component {
     render() {
-        let { result, keyword } = this.props.search;
+        let { result, keyword, show } = this.props.search;
         return (
-            result.length > 0 && keyword && <div className="m-searchresult">
+            show && <div className="m-searchresult">
                 <section className="m-songlist">
                     <div className="m-sglst">
                         {result.map(item => {
