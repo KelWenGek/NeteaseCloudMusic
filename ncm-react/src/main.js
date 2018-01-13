@@ -5,18 +5,15 @@ import axios from 'axios';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux'
-// import createHistory from 'history/createBrowserHistory'
+// import { createBrowserHistory as createHistory } from 'history'
+
 // import { Route } from 'react-router'
 // import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
-import {
-    BrowserRouter,
-    Route,
-    Link
-} from 'react-router-dom'
-import Home from '@/components/home/Index';
-import PlayList from '@/components/playlist/Index'
-import Song from '@/components/song/Index'
-import rootReducer from '@/store/reducers';
+import { BrowserRouter, Route, Link } from 'react-router-dom'
+import HomeComp from '@/components/HomeComp.jsx';
+// import PlaylistComp from 'PlaylistComp'
+// import SongComp from 'SongComp'
+import rootReducer from '@/store/index';
 
 axios.defaults.baseURL = 'http://127.0.0.1:3000/';
 
@@ -35,13 +32,14 @@ const store = createStore(
     composeWithDevTools(applyMiddleware(thunk))
 );
 
+
 const ncm =
     <Provider store={store}>
         <BrowserRouter>
             <div>
-                <Route path="/" exact component={Home} />
-                <Route path="/m/playlist/:id" component={PlayList} />
-                <Route path="/m/song/:id" component={() => <Song store={store} />} />
+                <Route path="/" exact component={HomeComp} />
+                {/* <Route path="/m/playlist/:id" component={PlaylistComp} />
+                <Route path="/m/song/:id" render={(props) => <SongComp store={store} {...props} />} /> */}
             </div>
         </BrowserRouter>
     </Provider>

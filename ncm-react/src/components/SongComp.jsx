@@ -26,7 +26,7 @@ export default withRouter(connect(
                 );
                 let lyric = {};
                 lyric.lines = lyr.replace(/\n$/, '').split('\n').map(l => {
-                    let match = l.match(/^\[(\d{2})\:(\d{2})\.(\d{2})\](.*)/);
+                    let match = l.match(/^\[(\d{2})\:(\d{2})\.(\d{2,})\](.*)/);
                     return {
                         time: parseFloat([match[1] * 60 + match[2], match[3]].join('.')),
                         tag: `${match[1]}:${match[2]}.${match[3]}`,
@@ -35,6 +35,18 @@ export default withRouter(connect(
                 });
                 lyric.loaded = true;
                 let song = songs[0];
+
+                let songPlay = await axios.get(`music/url?id=${id}`);
+                let play = songPlay.data.data[0];
+
+                console.log(play)
+
+
+                await this.props.songPlayReset({
+                    id: play.id,
+                    url: play.url,
+                    play
+                })
                 await this.props.songReset({
                     _url: song.al.pic_str,
                     _picUrl: song.al.picUrl,
@@ -42,25 +54,20 @@ export default withRouter(connect(
 
                 });
 
-                await this.props.songLyricReset({
+                this.props.songLyricReset({
                     id,
                     lyric
                 });
 
-                let songPlay = await axios.get(`music/url?id=${id}`);
-                let play = songPlay.data.data[0];
-                this.props.songPlayReset({
-                    id: play.id,
-                    url: play.url,
-                    play
-                })
+
+
             } catch (e) {
                 throw e;
             }
         }
 
         componentDidMount() {
-            window.addEventListener('resize', this.resize, false);
+            // window.addEventListener('resize', this.resize, false);
         }
 
 
@@ -145,8 +152,10 @@ export default withRouter(connect(
                             <div className="m-song_newfst">
                                 <span className="m-logo">
                                 </span>
-                                <SongDetail store={store} />
-                                <Lyric index={0} />
+                                {!!Song.song &&
+                                    [<SongDetail store={store} key="songDetail" />,
+                                    <Lyric store={store} index={0} key="songLyric" />]
+                                }
                                 <div>
                                     <div className="m-giude" style={{ bottom: '-14px' }}>
                                         <i className="arr ani"></i>

@@ -1,12 +1,18 @@
 import React, { Component } from 'react'
 import cn from 'classnames'
 import { check4ten } from '@/utils'
-export class Song extends Component {
+export class SongItem extends Component {
     render() {
         let { index, song: { id, name, alias, artists, album, highlight } } = this.props;
         return (
             <a key={id} className="m-sgitem" href={`/m/song/${id}`}>
-                {index !== undefined && index !== null ? <div className={cn('sgfl', index < 3 ? 'sgfl-cred' : undefined)}>{check4ten(index + 1)}</div> : undefined}
+                {
+                    index !== undefined && index !== null
+                        ? <div className={cn('sgfl', index < 3 ? 'sgfl-cred' : undefined)}>
+                            {check4ten(index + 1)}
+                        </div>
+                        : undefined
+                }
                 <div className="sgfr f-bd f-bd-btm">
                     <div className="sgchfl">
                         <div className="f-thide sgtl">
@@ -18,7 +24,15 @@ export class Song extends Component {
 
                         <div className="f-thide sginfo">
                             <i className="u-hmsprt sghot"></i>
-                            {artists[0].name}-{highlight ? <p className="hcover"><span className="highlight">{album.name}</span></p> : album.name}
+                            {artists[0].name}-{
+                                highlight
+                                    ? <p className="hcover">
+                                        <span className="highlight">
+                                            {album.name}
+                                        </span>
+                                    </p>
+                                    : album.name
+                            }
                         </div>
                     </div>
                     <div className="sgchfr">
@@ -33,7 +47,7 @@ export class Song extends Component {
 export default function wrapSong(convertFn) {
     return class extends Component {
         render() {
-            return <Song {...this.props} song={convertFn(this.props.song)} />
+            return <SongItem {...this.props} song={convertFn(this.props.song)} />
         }
     }
 }

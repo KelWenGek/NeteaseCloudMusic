@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
 let events = ["loadedmetadata", "play", "pause", "ended", "waiting", "playing", "timeupdate", "progress", "stalled", "error"]
-export class SongPlay extends Component {
+export default class MusicPlay extends Component {
 
-    defaultProps = {
+    static defaultProps = {
         autoPlay: false,
         src: ''
     }

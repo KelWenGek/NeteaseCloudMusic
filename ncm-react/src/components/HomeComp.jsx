@@ -1,16 +1,14 @@
 import React, { Component } from 'react'
-import cn from 'classnames'
-import Nav from '@/components/home/Nav'
-import Content from '@/components/home/Content'
+import HomeNavComp from '@/components/HomeNavComp'
+import HomeNavContentComp from '@/components/HomeNavContentComp'
 import AppStyle from '@/App.scss'
-export default class App extends Component {
-
+export default class HomeComp extends Component {
     render() {
         return (
             <div className="m-home">
                 <div className="m-tabarea m-tabarea-index">
-                    <Nav />
-                    <Content />
+                    <HomeNavComp />
+                    <HomeNavContentComp />
                 </div>
             </div>
         );

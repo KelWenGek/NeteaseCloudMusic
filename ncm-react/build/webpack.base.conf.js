@@ -26,11 +26,13 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.jsx', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
     }
+    // ,
+    // modules: ['', 'node_modules']
   },
   module: {
     rules: [
@@ -40,7 +42,7 @@ module.exports = {
         options: vueLoaderConfig
       },
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')]
       },
