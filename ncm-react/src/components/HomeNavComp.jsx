@@ -8,8 +8,6 @@ export default connect(
 )(
     class HomeNavComp extends Component {
         static selections = ['推荐歌曲', '热歌榜', '搜索'];
-
-
         render() {
             let { HomeTabCurIdx, changeTabIndex } = this.props;
             return (

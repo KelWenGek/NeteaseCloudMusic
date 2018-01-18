@@ -1,15 +1,8 @@
-export const SET_HOME_RECO_NEW_SG =
-    'SET_HOME_RECO_NEW_SG'
-
-
-export const setHomeRecoNewsg = (payload) => ({
-    type: SET_HOME_RECO_NEW_SG,
-    payload
+import { createTypes, createReducer, completeState, completeTypes, completeReducer } from '@/compose';
+export const actions = createTypes(completeTypes(['GET_HOME_RECO_NEWSG']), 'HOME')
+const actionReducerMap = completeReducer({
+    target: 'HomeRecoNewsg',
+    primaryActions: [actions.GET_HOME_RECO_NEWSG]
 });
+export default actionReducerMap;
 
-
-export const HomeRecoNewsgRd = {
-    [SET_HOME_RECO_NEW_SG](state, payload) {
-        return state = payload;
-    }
-};

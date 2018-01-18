@@ -1,3 +1,5 @@
+import { createReducer } from '@/compose'
+
 export const CHANGE_TAB_INDEX = 'CHANGE_TAB_INDEX';
 
 export const changeTabIndex = (payload) => ({
@@ -10,5 +12,8 @@ export const HomeTabCurIdxRd = {
         return state = index;
     }
 };
+
+
+export default createReducer(0, HomeTabCurIdxRd);
 
 
